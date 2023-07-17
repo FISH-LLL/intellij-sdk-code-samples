@@ -61,8 +61,8 @@ public class ConditionalOperatorConverter extends PsiElementBaseIntentionAction 
 
 		// Is this a token of type representing a "?" character?
 		if (element instanceof PsiJavaToken) {
-            final PsiJavaToken token = (PsiJavaToken) element;
-            if (token.getTokenType() != JavaTokenType.QUEST) {
+			final PsiJavaToken token = (PsiJavaToken) element;
+			if (token.getTokenType() != JavaTokenType.QUEST) {
 				return false;
 			}
 			// Is this token part of a fully formed conditional, i.e. a ternary?
