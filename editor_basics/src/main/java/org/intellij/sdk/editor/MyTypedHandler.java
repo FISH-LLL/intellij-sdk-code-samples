@@ -17,16 +17,16 @@ import org.jetbrains.annotations.NotNull;
  */
 class MyTypedHandler extends TypedHandlerDelegate {
 
-  @NotNull
-  @Override
-  public Result charTyped(char c, @NotNull Project project, @NotNull Editor editor, @NotNull PsiFile file) {
-    // Get the document and project
-    final Document document = editor.getDocument();
-    // Construct the runnable to substitute the string at offset 0 in the document
-    Runnable runnable = () -> document.insertString(0, "editor_basics\n");
-    // Make the document change in the context of a write action.
-    WriteCommandAction.runWriteCommandAction(project, runnable);
-    return Result.STOP;
-  }
+	@NotNull
+	@Override
+	public Result charTyped(char c, @NotNull Project project, @NotNull Editor editor, @NotNull PsiFile file) {
+		// Get the document and project
+		final Document document = editor.getDocument();
+		// Construct the runnable to substitute the string at offset 0 in the document
+		Runnable runnable = () -> document.insertString(0, "editor_basics\n");
+		// Make the document change in the context of a write action.
+		WriteCommandAction.runWriteCommandAction(project, runnable);
+		return Result.STOP;
+	}
 
 }

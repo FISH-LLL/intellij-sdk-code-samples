@@ -19,50 +19,50 @@ import org.jetbrains.annotations.NotNull;
  */
 public class EditorIllustrationAction extends AnAction {
 
-  /**
-   * Replaces the run of text selected by the primary caret with a fixed string.
-   *
-   * @param e Event related to this action
-   */
-  @Override
-  public void actionPerformed(@NotNull final AnActionEvent e) {
-    // Get all the required data from data keys
-    // Editor and Project were verified in update(), so they are not null.
-    final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
-    final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
-    final Document document = editor.getDocument();
-    // Work off of the primary caret to get the selection info
-    Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();
-    int start = primaryCaret.getSelectionStart();
-    int end = primaryCaret.getSelectionEnd();
-    // Replace the selection with a fixed string.
-    // Must do this document change in a write action context.
-    WriteCommandAction.runWriteCommandAction(project, () ->
-            document.replaceString(start, end, "editor_basics")
-    );
-    // De-select the text range that was just replaced
-    primaryCaret.removeSelection();
-  }
+	/**
+	 * Replaces the run of text selected by the primary caret with a fixed string.
+	 *
+	 * @param e Event related to this action
+	 */
+	@Override
+	public void actionPerformed(@NotNull final AnActionEvent e) {
+		// Get all the required data from data keys
+		// Editor and Project were verified in update(), so they are not null.
+		final Editor editor = e.getRequiredData(CommonDataKeys.EDITOR);
+		final Project project = e.getRequiredData(CommonDataKeys.PROJECT);
+		final Document document = editor.getDocument();
+		// Work off of the primary caret to get the selection info
+		Caret primaryCaret = editor.getCaretModel().getPrimaryCaret();
+		int start = primaryCaret.getSelectionStart();
+		int end = primaryCaret.getSelectionEnd();
+		// Replace the selection with a fixed string.
+		// Must do this document change in a write action context.
+		WriteCommandAction.runWriteCommandAction(project, () ->
+				document.replaceString(start, end, "editor_basics")
+		);
+		// De-select the text range that was just replaced
+		primaryCaret.removeSelection();
+	}
 
-  /**
-   * Sets visibility and enables this action menu item if:
-   * <ul>
-   *   <li>a project is open</li>
-   *   <li>an editor is active</li>
-   *   <li>some characters are selected</li>
-   * </ul>
-   *
-   * @param e Event related to this action
-   */
-  @Override
-  public void update(@NotNull final AnActionEvent e) {
-    // Get required data keys
-    final Project project = e.getProject();
-    final Editor editor = e.getData(CommonDataKeys.EDITOR);
-    // Set visibility and enable only in case of existing project and editor and if a selection exists
-    e.getPresentation().setEnabledAndVisible(
-            project != null && editor != null && editor.getSelectionModel().hasSelection()
-    );
-  }
+	/**
+	 * Sets visibility and enables this action menu item if:
+	 * <ul>
+	 *   <li>a project is open</li>
+	 *   <li>an editor is active</li>
+	 *   <li>some characters are selected</li>
+	 * </ul>
+	 *
+	 * @param e Event related to this action
+	 */
+	@Override
+	public void update(@NotNull final AnActionEvent e) {
+		// Get required data keys
+		final Project project = e.getProject();
+		final Editor editor = e.getData(CommonDataKeys.EDITOR);
+		// Set visibility and enable only in case of existing project and editor and if a selection exists
+		e.getPresentation().setEnabledAndVisible(
+				project != null && editor != null && editor.getSelectionModel().hasSelection()
+		);
+	}
 
 }

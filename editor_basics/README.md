@@ -1,9 +1,11 @@
 # Editor Sample Project [![JetBrains IntelliJ Platform SDK Docs](https://jb.gg/badges/docs.svg)][docs]
+
 *Reference: [Basics of Working with the Editor in IntelliJ SDK Docs][docs:editor_basics]*
 
 ## Quickstart
 
-Editor Sample Project provides a [TypedHandlerDelegate][sdk:TypedHandlerDelegate] implementation, which inserts `editor_basics` on the top of the edited document any time user types a character.
+Editor Sample Project provides a [TypedHandlerDelegate][sdk:TypedHandlerDelegate] implementation, which
+inserts `editor_basics` on the top of the edited document any time user types a character.
 In addition, three actions are available in the Editor context menu:
 
 - Editor Replace Text - replaces the selected text with `editor_basics`,
@@ -30,11 +32,17 @@ In addition, three actions are available in the Editor context menu:
 
 
 [docs]: https://plugins.jetbrains.com/docs/intellij/
+
 [docs:actions]: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
+
 [docs:editor_basics]: https://plugins.jetbrains.com/docs/intellij/editor-basics.html
+
 [docs:ep]: https://plugins.jetbrains.com/docs/intellij/plugin-extensions.html
 
 [file:MyTypedHandler]: ./src/main/java/org/intellij/sdk/editor/MyTypedHandler.java
+
 [file:EditorIllustrationAction]: ./src/main/java/org/intellij/sdk/editor/EditorIllustrationAction.java
+
 [file:EditorHandlerIllustration]: ./src/main/java/org/intellij/sdk/editor/EditorHandlerIllustration.java
+
 [file:EditorAreaIllustration]: ./src/main/java/org/intellij/sdk/editor/EditorAreaIllustration.java
