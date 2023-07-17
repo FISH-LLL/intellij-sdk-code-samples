@@ -3,18 +3,19 @@
 
 <idea-plugin>
 
-  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+  <!-- 此插件的唯一id。在插件的声明周期内必须保持不变。-->
   <id>org.intellij.sdk.action</id>
 
-  <!-- Text to display as name on Settings | Plugin page -->
-  <name>SDK: Action Sample</name>
+  <!-- 在“设置”|“插件”页面上显示的名称 -->
+  <name>SDK: Action 示例</name>
 
-  <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
+  <!-- 指示此插件可以加载到所有基于IntelliJ平台的产品中。 -->
   <depends>com.intellij.modules.platform</depends>
 
-  <!-- Text to display as description on Settings | Plugin page -->
+  <!-- 在“设置”|“插件”页面上显示为描述的文本 -->
   <description>
     <![CDATA[
+      演示了实现`动作`和`动作组`模式.<br>在工具栏中添加入口。
       Demonstrates implementing Action and Action Group patterns.<br> Adds entries to the Tools menu.
     ]]>
   </description>
@@ -28,20 +29,22 @@
     ]]>
   </change-notes>
 
-  <!-- Text to display as company information on Settings | Plugin page -->
+  <!-- 在“设置”|“插件”页面上显示为公司信息 -->
   <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
-  <!-- Declare the default resource location for localizing menu strings -->
+  <!-- 用于本地化菜单字符串的默认资源位置 -->
   <resource-bundle>messages.BasicActionsBundle</resource-bundle>
 
   <actions>
     <!--
       See https://plugins.jetbrains.com/docs/intellij/basic-action-system.html#registering-actions
       for information about the elements and attributes used for actions and groups.
+      有关 actions 和 groups 元素和属性信息。
 
       This <action> element adds a static menu item in first position of the Tools menu that shows PopupDialogAction.
       Note this element has no text or description attributes because translations for them are given
       by action-id in the resource-bundle.
+
       An <override-text> element is also used for demonstration purposes to show alternate text and description strings
       for this action's entries in the MainMenu. (Which includes the ToolsMenu. Try commenting out the override-text
       element and see how the menu text changes.) The alternate text and description attributes do not
