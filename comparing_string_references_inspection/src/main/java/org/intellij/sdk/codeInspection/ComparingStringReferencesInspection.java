@@ -116,8 +116,7 @@ public class ComparingStringReferencesInspection extends AbstractBaseJavaLocalIn
       }
 
       PsiElementFactory factory = JavaPsiFacade.getInstance(project).getElementFactory();
-      PsiMethodCallExpression equalsCall =
-              (PsiMethodCallExpression) factory.createExpressionFromText("a.equals(b)", null);
+      PsiMethodCallExpression equalsCall =  (PsiMethodCallExpression) factory.createExpressionFromText("a.equals(b)", null);
 
       equalsCall.getMethodExpression().getQualifierExpression().replace(lExpr);
       equalsCall.getArgumentList().getExpressions()[0].replace(rExpr);
