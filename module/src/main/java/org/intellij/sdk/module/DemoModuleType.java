@@ -14,45 +14,45 @@ import javax.swing.*;
 
 public class DemoModuleType extends ModuleType<DemoModuleBuilder> {
 
-  private static final String ID = "DEMO_MODULE_TYPE";
+	private static final String ID = "DEMO_MODULE_TYPE";
 
-  public DemoModuleType() {
-    super(ID);
-  }
+	public DemoModuleType() {
+		super(ID);
+	}
 
-  public static DemoModuleType getInstance() {
-    return (DemoModuleType) ModuleTypeManager.getInstance().findByID(ID);
-  }
+	public static DemoModuleType getInstance() {
+		return (DemoModuleType) ModuleTypeManager.getInstance().findByID(ID);
+	}
 
-  @NotNull
-  @Override
-  public DemoModuleBuilder createModuleBuilder() {
-    return new DemoModuleBuilder();
-  }
+	@NotNull
+	@Override
+	public DemoModuleBuilder createModuleBuilder() {
+		return new DemoModuleBuilder();
+	}
 
-  @NotNull
-  @Override
-  public String getName() {
-    return "SDK Module Type";
-  }
+	@NotNull
+	@Override
+	public String getName() {
+		return "SDK Module Type";
+	}
 
-  @NotNull
-  @Override
-  public String getDescription() {
-    return "Example custom module type";
-  }
+	@NotNull
+	@Override
+	public String getDescription() {
+		return "Example custom module type";
+	}
 
-  @NotNull
-  @Override
-  public Icon getNodeIcon(@Deprecated boolean b) {
-    return SdkIcons.Sdk_default_icon;
-  }
+	@NotNull
+	@Override
+	public Icon getNodeIcon(@Deprecated boolean b) {
+		return SdkIcons.Sdk_default_icon;
+	}
 
-  @Override
-  public ModuleWizardStep @NotNull [] createWizardSteps(@NotNull WizardContext wizardContext,
-                                                        @NotNull DemoModuleBuilder moduleBuilder,
-                                                        @NotNull ModulesProvider modulesProvider) {
-    return super.createWizardSteps(wizardContext, moduleBuilder, modulesProvider);
-  }
+	@Override
+	public ModuleWizardStep @NotNull [] createWizardSteps(@NotNull WizardContext wizardContext,
+														  @NotNull DemoModuleBuilder moduleBuilder,
+														  @NotNull ModulesProvider modulesProvider) {
+		return super.createWizardSteps(wizardContext, moduleBuilder, modulesProvider);
+	}
 
 }

@@ -20,96 +20,96 @@ import javax.swing.tree.DefaultTreeModel;
 
 public class ImagesProjectViewPane extends AbstractProjectViewPSIPane {
 
-  public static final String ID = "IMAGES";
+	public static final String ID = "IMAGES";
 
-  protected ImagesProjectViewPane(Project project) {
-    super(project);
-  }
+	protected ImagesProjectViewPane(Project project) {
+		super(project);
+	}
 
-  @NotNull
-  @Override
-  public String getTitle() {
-    return "SDK-Images";
-  }
+	@NotNull
+	@Override
+	public String getTitle() {
+		return "SDK-Images";
+	}
 
-  @NotNull
-  @Override
-  public javax.swing.Icon getIcon() {
-    return AllIcons.FileTypes.Custom;
-  }
+	@NotNull
+	@Override
+	public javax.swing.Icon getIcon() {
+		return AllIcons.FileTypes.Custom;
+	}
 
-  @NotNull
-  @Override
-  public String getId() {
-    return ID;
-  }
+	@NotNull
+	@Override
+	public String getId() {
+		return ID;
+	}
 
-  @Override
-  public int getWeight() {
-    return 10;
-  }
+	@Override
+	public int getWeight() {
+		return 10;
+	}
 
-  @NotNull
-  @Override
-  public SelectInTarget createSelectInTarget() {
-    return new ProjectViewSelectInTarget(myProject) {
+	@NotNull
+	@Override
+	public SelectInTarget createSelectInTarget() {
+		return new ProjectViewSelectInTarget(myProject) {
 
-      @Override
-      public String toString() {
-        return ID;
-      }
+			@Override
+			public String toString() {
+				return ID;
+			}
 
-      @Override
-      public String getMinorViewId() {
-        return ID;
-      }
+			@Override
+			public String getMinorViewId() {
+				return ID;
+			}
 
-      @Override
-      public float getWeight() {
-        return 10;
-      }
-    };
-  }
+			@Override
+			public float getWeight() {
+				return 10;
+			}
+		};
+	}
 
-  @NotNull
-  @Override
-  protected ProjectAbstractTreeStructureBase createStructure() {
-    return new ProjectTreeStructure(myProject, ID) {
-      @Override
-      protected ImagesProjectNode createRoot(@NotNull Project project, @NotNull ViewSettings settings) {
-        return new ImagesProjectNode(project);
-      }
+	@NotNull
+	@Override
+	protected ProjectAbstractTreeStructureBase createStructure() {
+		return new ProjectTreeStructure(myProject, ID) {
+			@Override
+			protected ImagesProjectNode createRoot(@NotNull Project project, @NotNull ViewSettings settings) {
+				return new ImagesProjectNode(project);
+			}
 
-      // Children will be searched in async mode
-      @Override
-      public boolean isToBuildChildrenInBackground(@NotNull Object element) {
-        return true;
-      }
-    };
-  }
+			// Children will be searched in async mode
+			@Override
+			public boolean isToBuildChildrenInBackground(@NotNull Object element) {
+				return true;
+			}
+		};
+	}
 
-  @NotNull
-  @Override
-  protected ProjectViewTree createTree(@NotNull DefaultTreeModel model) {
-    return new ProjectViewTree(model) {
-      @Override
-      public boolean isRootVisible() {
-        return true;
-      }
-    };
-  }
+	@NotNull
+	@Override
+	protected ProjectViewTree createTree(@NotNull DefaultTreeModel model) {
+		return new ProjectViewTree(model) {
+			@Override
+			public boolean isRootVisible() {
+				return true;
+			}
+		};
+	}
 
-  //  Legacy code, awaiting refactoring of AbstractProjectViewPSIPane#createBuilder
-  @Override
-  protected BaseProjectTreeBuilder createBuilder(@NotNull DefaultTreeModel treeModel) {
-    return null;
-  }
+	//  Legacy code, awaiting refactoring of AbstractProjectViewPSIPane#createBuilder
+	@Override
+	protected BaseProjectTreeBuilder createBuilder(@NotNull DefaultTreeModel treeModel) {
+		return null;
+	}
 
-  //  Legacy code, awaiting refactoring of AbstractProjectViewPSIPane#createTreeUpdater
-  @NotNull
-  @Override
-  protected AbstractTreeUpdater createTreeUpdater(@NotNull AbstractTreeBuilder builder) {
-    throw new IllegalStateException("ImagesProjectViewPane tree is async now");
-  }
+	//  Legacy code, awaiting refactoring of AbstractProjectViewPSIPane#createTreeUpdater
+	@NotNull
+	@Override
+	protected AbstractTreeUpdater createTreeUpdater(@NotNull AbstractTreeBuilder builder) {
+		throw new IllegalStateException("ImagesProjectViewPane tree is async now");
+	}
 
 }
