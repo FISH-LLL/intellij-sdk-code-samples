@@ -16,27 +16,27 @@ import org.jetbrains.annotations.Nullable;
  * these persistent application settings are stored.
  */
 @State(
-        name = "org.intellij.sdk.settings.AppSettingsState",
-        storages = @Storage("SdkSettingsPlugin.xml")
+		name = "org.intellij.sdk.settings.AppSettingsState",
+		storages = @Storage("SdkSettingsPlugin.xml")
 )
 public class AppSettingsState implements PersistentStateComponent<AppSettingsState> {
 
-  public String userId = "John Q. Public";
-  public boolean ideaStatus = false;
+	public String userId = "John Q. Public";
+	public boolean ideaStatus = false;
 
-  public static AppSettingsState getInstance() {
-    return ApplicationManager.getApplication().getService(AppSettingsState.class);
-  }
+	public static AppSettingsState getInstance() {
+		return ApplicationManager.getApplication().getService(AppSettingsState.class);
+	}
 
-  @Nullable
-  @Override
-  public AppSettingsState getState() {
-    return this;
-  }
+	@Nullable
+	@Override
+	public AppSettingsState getState() {
+		return this;
+	}
 
-  @Override
-  public void loadState(@NotNull AppSettingsState state) {
-    XmlSerializerUtil.copyBean(state, this);
-  }
+	@Override
+	public void loadState(@NotNull AppSettingsState state) {
+		XmlSerializerUtil.copyBean(state, this);
+	}
 
 }
