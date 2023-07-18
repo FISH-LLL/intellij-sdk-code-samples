@@ -4,6 +4,8 @@
 
 ## Quickstart
 
+### 项目树形目录显示中，仅显示文本文件
+
 The Tree Structure Provider sample project implements `com.intellij.treeStructureProvider` Extension Point, which allows
 modifying the structure of the project tree in the _Project View_ panel.
 This implementation limits the presented files to the Plain Text files only.
