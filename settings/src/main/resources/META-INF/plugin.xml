@@ -7,7 +7,7 @@
 	<id>org.intellij.sdk.settings</id>
 
 	<!-- Text to display as name on Settings | Plugin page -->
-	<name>SDK: Settings Example</name>
+	<name>SDK: Settings 示例</name>
 
 	<!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
 		 on how to target different products -->
@@ -35,7 +35,7 @@
 		<applicationConfigurable parentId="tools"
 								 instance="org.intellij.sdk.settings.AppSettingsConfigurable"
 								 id="org.intellij.sdk.settings.AppSettingsConfigurable"
-								 displayName="SDK: Application Settings Example"/>
+								 displayName="SDK: Application Settings 示例"/>
 		<applicationService serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
 	</extensions>
 
