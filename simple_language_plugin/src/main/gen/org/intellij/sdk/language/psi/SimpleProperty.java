@@ -7,16 +7,16 @@ import org.jetbrains.annotations.NotNull;
 
 public interface SimpleProperty extends SimpleNamedElement {
 
-  String getKey();
+	String getKey();
 
-  String getValue();
+	String getValue();
 
-  String getName();
+	String getName();
 
-  PsiElement setName(@NotNull String newName);
+	PsiElement setName(@NotNull String newName);
 
-  PsiElement getNameIdentifier();
+	PsiElement getNameIdentifier();
 
-  ItemPresentation getPresentation();
+	ItemPresentation getPresentation();
 
 }

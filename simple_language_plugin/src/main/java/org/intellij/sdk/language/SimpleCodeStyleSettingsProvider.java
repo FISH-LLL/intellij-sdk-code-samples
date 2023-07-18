@@ -14,33 +14,33 @@ import org.jetbrains.annotations.Nullable;
 
 public class SimpleCodeStyleSettingsProvider extends CodeStyleSettingsProvider {
 
-  @Override
-  public CustomCodeStyleSettings createCustomSettings(CodeStyleSettings settings) {
-    return new SimpleCodeStyleSettings(settings);
-  }
+	@Override
+	public CustomCodeStyleSettings createCustomSettings(CodeStyleSettings settings) {
+		return new SimpleCodeStyleSettings(settings);
+	}
 
-  @Nullable
-  @Override
-  public String getConfigurableDisplayName() {
-    return "Simple";
-  }
+	@Nullable
+	@Override
+	public String getConfigurableDisplayName() {
+		return "Simple";
+	}
 
-  @NotNull
-  public CodeStyleConfigurable createConfigurable(@NotNull CodeStyleSettings settings, @NotNull CodeStyleSettings modelSettings) {
-    return new CodeStyleAbstractConfigurable(settings, modelSettings, this.getConfigurableDisplayName()) {
-      @Override
-      protected CodeStyleAbstractPanel createPanel(CodeStyleSettings settings) {
-        return new SimpleCodeStyleMainPanel(getCurrentSettings(), settings);
-      }
-    };
-  }
+	@NotNull
+	public CodeStyleConfigurable createConfigurable(@NotNull CodeStyleSettings settings, @NotNull CodeStyleSettings modelSettings) {
+		return new CodeStyleAbstractConfigurable(settings, modelSettings, this.getConfigurableDisplayName()) {
+			@Override
+			protected CodeStyleAbstractPanel createPanel(CodeStyleSettings settings) {
+				return new SimpleCodeStyleMainPanel(getCurrentSettings(), settings);
+			}
+		};
+	}
 
-  private static class SimpleCodeStyleMainPanel extends TabbedLanguageCodeStylePanel {
+	private static class SimpleCodeStyleMainPanel extends TabbedLanguageCodeStylePanel {
 
-    public SimpleCodeStyleMainPanel(CodeStyleSettings currentSettings, CodeStyleSettings settings) {
-      super(SimpleLanguage.INSTANCE, currentSettings, settings);
-    }
+		public SimpleCodeStyleMainPanel(CodeStyleSettings currentSettings, CodeStyleSettings settings) {
+			super(SimpleLanguage.INSTANCE, currentSettings, settings);
+		}
 
-  }
+	}
 
 }

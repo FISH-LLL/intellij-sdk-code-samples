@@ -12,9 +12,9 @@ import javax.swing.*;
 
 public class SimplePropertyIconProvider extends IconProvider {
 
-  @Override
-  public @Nullable Icon getIcon(@NotNull PsiElement element, int flags) {
-    return element instanceof SimpleProperty ? SimpleIcons.FILE : null;
-  }
+	@Override
+	public @Nullable Icon getIcon(@NotNull PsiElement element, int flags) {
+		return element instanceof SimpleProperty ? SimpleIcons.FILE : null;
+	}
 
 }

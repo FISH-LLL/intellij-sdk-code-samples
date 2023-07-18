@@ -13,16 +13,16 @@ import org.jetbrains.annotations.Nullable;
 
 public class SimpleStructureViewFactory implements PsiStructureViewFactory {
 
-  @Nullable
-  @Override
-  public StructureViewBuilder getStructureViewBuilder(@NotNull final PsiFile psiFile) {
-    return new TreeBasedStructureViewBuilder() {
-      @NotNull
-      @Override
-      public StructureViewModel createStructureViewModel(@Nullable Editor editor) {
-        return new SimpleStructureViewModel(editor, psiFile);
-      }
-    };
-  }
+	@Nullable
+	@Override
+	public StructureViewBuilder getStructureViewBuilder(@NotNull final PsiFile psiFile) {
+		return new TreeBasedStructureViewBuilder() {
+			@NotNull
+			@Override
+			public StructureViewModel createStructureViewModel(@Nullable Editor editor) {
+				return new SimpleStructureViewModel(editor, psiFile);
+			}
+		};
+	}
 
 }

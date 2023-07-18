@@ -8,21 +8,21 @@ import org.intellij.sdk.language.psi.impl.*;
 
 public interface SimpleTypes {
 
-  IElementType PROPERTY = new SimpleElementType("PROPERTY");
+	IElementType PROPERTY = new SimpleElementType("PROPERTY");
 
-  IElementType COMMENT = new SimpleTokenType("COMMENT");
-  IElementType CRLF = new SimpleTokenType("CRLF");
-  IElementType KEY = new SimpleTokenType("KEY");
-  IElementType SEPARATOR = new SimpleTokenType("SEPARATOR");
-  IElementType VALUE = new SimpleTokenType("VALUE");
+	IElementType COMMENT = new SimpleTokenType("COMMENT");
+	IElementType CRLF = new SimpleTokenType("CRLF");
+	IElementType KEY = new SimpleTokenType("KEY");
+	IElementType SEPARATOR = new SimpleTokenType("SEPARATOR");
+	IElementType VALUE = new SimpleTokenType("VALUE");
 
-  class Factory {
-    public static PsiElement createElement(ASTNode node) {
-      IElementType type = node.getElementType();
-      if (type == PROPERTY) {
-        return new SimplePropertyImpl(node);
-      }
-      throw new AssertionError("Unknown element type: " + type);
-    }
-  }
+	class Factory {
+		public static PsiElement createElement(ASTNode node) {
+			IElementType type = node.getElementType();
+			if (type == PROPERTY) {
+				return new SimplePropertyImpl(node);
+			}
+			throw new AssertionError("Unknown element type: " + type);
+		}
+	}
 }

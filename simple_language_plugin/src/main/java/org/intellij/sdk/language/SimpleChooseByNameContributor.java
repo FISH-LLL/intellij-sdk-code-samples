@@ -19,24 +19,24 @@ import java.util.Objects;
 
 public class SimpleChooseByNameContributor implements ChooseByNameContributorEx {
 
-  @Override
-  public void processNames(@NotNull Processor<? super String> processor,
-                           @NotNull GlobalSearchScope scope,
-                           @Nullable IdFilter filter) {
-    Project project = Objects.requireNonNull(scope.getProject());
-    List<String> propertyKeys = ContainerUtil.map(
-            SimpleUtil.findProperties(project), SimpleProperty::getKey);
-    ContainerUtil.process(propertyKeys, processor);
-  }
+	@Override
+	public void processNames(@NotNull Processor<? super String> processor,
+							 @NotNull GlobalSearchScope scope,
+							 @Nullable IdFilter filter) {
+		Project project = Objects.requireNonNull(scope.getProject());
+		List<String> propertyKeys = ContainerUtil.map(
+				SimpleUtil.findProperties(project), SimpleProperty::getKey);
+		ContainerUtil.process(propertyKeys, processor);
+	}
 
-  @Override
-  public void processElementsWithName(@NotNull String name,
-                                      @NotNull Processor<? super NavigationItem> processor,
-                                      @NotNull FindSymbolParameters parameters) {
-    List<NavigationItem> properties = ContainerUtil.map(
-            SimpleUtil.findProperties(parameters.getProject(), name),
-            property -> (NavigationItem) property);
-    ContainerUtil.process(properties, processor);
-  }
+	@Override
+	public void processElementsWithName(@NotNull String name,
+										@NotNull Processor<? super NavigationItem> processor,
+										@NotNull FindSymbolParameters parameters) {
+		List<NavigationItem> properties = ContainerUtil.map(
+				SimpleUtil.findProperties(parameters.getProject(), name),
+				property -> (NavigationItem) property);
+		ContainerUtil.process(properties, processor);
+	}
 
 }
