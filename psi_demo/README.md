@@ -4,6 +4,8 @@
 
 ## Quickstart
 
+主菜单 -> Tools -> PSINavigationDemo
+
 PSI Demo project demonstrates working with the PSI Navigation by implementing `AnAction` that through the message
 dialog, informs about:
 
