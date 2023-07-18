@@ -17,11 +17,11 @@ public class AppSettingsComponent {
 
 	private final JPanel myMainPanel;
 	private final JBTextField myUserNameText = new JBTextField();
-	private final JBCheckBox myIdeaUserStatus = new JBCheckBox("Do you use IntelliJ IDEA? ");
+	private final JBCheckBox myIdeaUserStatus = new JBCheckBox("你使用 IntelliJ IDEA 吗? ");
 
 	public AppSettingsComponent() {
 		myMainPanel = FormBuilder.createFormBuilder()
-				.addLabeledComponent(new JBLabel("Enter user name: "), myUserNameText, 1, false)
+				.addLabeledComponent(new JBLabel("用户名: "), myUserNameText, 1, false)
 				.addComponent(myIdeaUserStatus, 1)
 				.addComponentFillVertically(new JPanel(), 0)
 				.getPanel();

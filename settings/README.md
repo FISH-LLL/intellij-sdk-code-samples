@@ -4,6 +4,8 @@
 
 ## Quickstart
 
+在 Settings 中添加自定义的面板, 位于 Settings -> Tools 下面
+
 This project illustrates a custom Application-level Settings through the implementation of:
 
 - `AppSettingsConfigurable` is analogous to a Controller in the MVC model - it interacts with the other two Settings

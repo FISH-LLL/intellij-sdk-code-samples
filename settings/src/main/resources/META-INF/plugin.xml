@@ -32,7 +32,8 @@
 	<vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
 
 	<extensions defaultExtensionNs="com.intellij">
-		<applicationConfigurable parentId="tools" instance="org.intellij.sdk.settings.AppSettingsConfigurable"
+		<applicationConfigurable parentId="tools"
+								 instance="org.intellij.sdk.settings.AppSettingsConfigurable"
 								 id="org.intellij.sdk.settings.AppSettingsConfigurable"
 								 displayName="SDK: Application Settings Example"/>
 		<applicationService serviceImplementation="org.intellij.sdk.settings.AppSettingsState"/>
