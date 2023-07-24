@@ -18,18 +18,18 @@ import org.jetbrains.annotations.NotNull;
  */
 public class DynamicActionGroup extends ActionGroup {
 
-  /**
-   * Returns an array of menu actions for the group.
-   *
-   * @param e Event received when the associated group-id menu is chosen.
-   * @return AnAction[] An instance of {@link AnAction}, in this case containing a single instance of the
-   * {@link PopupDialogAction} class.
-   */
-  @Override
-  public AnAction @NotNull [] getChildren(AnActionEvent e) {
-    return new AnAction[]{
-            new PopupDialogAction("Action Added at Runtime", "Dynamic Action Demo", SdkIcons.Sdk_default_icon)
-    };
-  }
+	/**
+	 * Returns an array of menu actions for the group.
+	 *
+	 * @param e Event received when the associated group-id menu is chosen.
+	 * @return AnAction[] An instance of {@link AnAction}, in this case containing a single instance of the
+	 * {@link PopupDialogAction} class.
+	 */
+	@Override
+	public AnAction @NotNull [] getChildren(AnActionEvent e) {
+		return new AnAction[]{
+				new PopupDialogAction("Action Added at Runtime", "Dynamic Action Demo", SdkIcons.Sdk_default_icon)
+		};
+	}
 
 }

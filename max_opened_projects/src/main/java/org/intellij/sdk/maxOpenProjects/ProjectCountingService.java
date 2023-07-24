@@ -10,22 +10,22 @@ import com.intellij.openapi.components.Service;
 @Service
 public final class ProjectCountingService {
 
-  private final static int MAX_OPEN_PROJECTS_LIMIT = 3;
+	private final static int MAX_OPEN_PROJECTS_LIMIT = 3;
 
-  private int myOpenProjectCount = 0;
+	private int myOpenProjectCount = 0;
 
-  public void incrProjectCount() {
-    myOpenProjectCount++;
-  }
+	public void incrProjectCount() {
+		myOpenProjectCount++;
+	}
 
-  public void decrProjectCount() {
-    if (myOpenProjectCount > 0) {
-      myOpenProjectCount--;
-    }
-  }
+	public void decrProjectCount() {
+		if (myOpenProjectCount > 0) {
+			myOpenProjectCount--;
+		}
+	}
 
-  public boolean projectLimitExceeded() {
-    return myOpenProjectCount > MAX_OPEN_PROJECTS_LIMIT;
-  }
+	public boolean projectLimitExceeded() {
+		return myOpenProjectCount > MAX_OPEN_PROJECTS_LIMIT;
+	}
 
 }

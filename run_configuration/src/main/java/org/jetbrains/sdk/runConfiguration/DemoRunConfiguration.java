@@ -50,7 +50,7 @@ public class DemoRunConfiguration extends RunConfigurationBase<DemoRunConfigurat
 			@NotNull
 			@Override
 			protected ProcessHandler startProcess() throws ExecutionException {
-				GeneralCommandLine commandLine =  new GeneralCommandLine(getOptions().getScriptName());
+				GeneralCommandLine commandLine = new GeneralCommandLine(getOptions().getScriptName());
 				OSProcessHandler processHandler = ProcessHandlerFactory.getInstance().createColoredProcessHandler(commandLine);
 				ProcessTerminatedListener.attach(processHandler);
 				return processHandler;

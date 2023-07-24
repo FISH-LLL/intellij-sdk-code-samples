@@ -10,21 +10,21 @@ import org.jetbrains.annotations.NotNull;
  */
 public class DemoFacetState {
 
-  static final String DEMO_FACET_INIT_PATH = "";
+	static final String DEMO_FACET_INIT_PATH = "";
 
-  public String myPathToSdk;
+	public String myPathToSdk;
 
-  DemoFacetState() {
-    setDemoFacetState(DEMO_FACET_INIT_PATH);
-  }
+	DemoFacetState() {
+		setDemoFacetState(DEMO_FACET_INIT_PATH);
+	}
 
-  @NotNull
-  public String getDemoFacetState() {
-    return myPathToSdk;
-  }
+	@NotNull
+	public String getDemoFacetState() {
+		return myPathToSdk;
+	}
 
-  public void setDemoFacetState(@NotNull String newPath) {
-    myPathToSdk = newPath;
-  }
+	public void setDemoFacetState(@NotNull String newPath) {
+		myPathToSdk = newPath;
+	}
 
 }

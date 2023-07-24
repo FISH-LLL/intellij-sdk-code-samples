@@ -10,18 +10,18 @@ import org.jetbrains.annotations.PropertyKey;
 
 public final class InspectionBundle extends DynamicBundle {
 
-  private static final InspectionBundle ourInstance = new InspectionBundle();
+	private static final InspectionBundle ourInstance = new InspectionBundle();
 
-  @NonNls
-  public static final String BUNDLE = "messages.InspectionBundle";
+	@NonNls
+	public static final String BUNDLE = "messages.InspectionBundle";
 
-  private InspectionBundle() {
-    super(BUNDLE);
-  }
+	private InspectionBundle() {
+		super(BUNDLE);
+	}
 
-  public static @Nls String message(@NotNull @PropertyKey(resourceBundle = BUNDLE) String key,
-                                    Object @NotNull ... params) {
-    return ourInstance.getMessage(key, params);
-  }
+	public static @Nls String message(@NotNull @PropertyKey(resourceBundle = BUNDLE) String key,
+									  Object @NotNull ... params) {
+		return ourInstance.getMessage(key, params);
+	}
 
 }
